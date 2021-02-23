@@ -9,6 +9,8 @@
 // FIXME ==> Aucun code à fournir pour cette étape.
 
 
+        //(drop)
+
 /**
  * 2. A l'aide de PHP
  * ==> Créez une nouvelle base de données intro_sql
@@ -22,20 +24,25 @@
 
 // TODO Votre code ici bas.
 
-try {
-    $maConnexion = ........
+    $server = 'localhost';
+    $user = 'root';
+    $password = '';
+    $db= 'bdd';
 
-    $request = "
-        Ma super requête SQL pour créer une base de données.
-    ";
+    try {
+    $maConnexion = new PDO("mysql:host=$server;dbname=$db",$user ,$password);
 
-    $maConnexion->une super méthode pour exécuter ma requete
+    $request = "Ma super requête SQL pour créer une base de données.";
+
+    $maConnexion->exec($maConnexion);
 
     echo "La base de données intro_sql a bien été créée.";
-}
-catch (PDOException $exception) {
-    echo $exception->getMessage();
-}
+    }
+    catch (PDOException $exception) {
+        echo $exception->getMessage();
+    }
+
+
 
 
 
